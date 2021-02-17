@@ -1,0 +1,7 @@
+{
+    "/*": {
+        "target": "https://books-back.herokuapp.com",
+        "secure": true,
+        "logLevel": "debug"
+    }
+}
