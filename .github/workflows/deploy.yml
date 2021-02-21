@@ -4,16 +4,12 @@ on:
   push:
     branches:
       - main
-      - test
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: testing
-        run: |
-          npm test
       - uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
