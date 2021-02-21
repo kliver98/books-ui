@@ -6,7 +6,8 @@
     "start": "node server.js",
     "start-ng": "ng serve --open",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test --no-progress",
+    "test-ci": "ng test --karma-config=karma-ci.conf.js --no-progress",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build --prod"
@@ -44,11 +45,12 @@
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.2.0",
-    "karma-chrome-launcher": "~3.1.0",
+    "karma-chrome-launcher": "^3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
+    "puppeteer": "^7.1.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.1.2"
