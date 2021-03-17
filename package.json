@@ -4,13 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "start-ng": "ng serve --open",
+    "start:dev": "ng serve",
+    "prebuild": "npm run config",
     "build": "ng build",
-    "test": "ng test --no-progress",
-    "test-ci": "ng test --karma-config=karma-ci.conf.js --no-progress",
+    "test": "ng test",
+    "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod"
+    "config": "node set-env.js"
   },
   "private": true,
   "dependencies": {
@@ -26,9 +27,8 @@
     "@angular/platform-browser": "~11.1.2",
     "@angular/platform-browser-dynamic": "~11.1.2",
     "@angular/router": "~11.1.2",
-    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "path": "^0.12.7",
+    "ng-zorro-antd": "^11.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "typescript": "~4.1.2",

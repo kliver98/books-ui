@@ -1,8 +1,6 @@
-//Thanks to https://stackoverflow.com/questions/47236963/no-provider-for-httpclient
-// Http testing module
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
 
 import { OverviewComponent } from './overview.component';
 
@@ -12,8 +10,11 @@ describe('OverviewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       declarations: [ OverviewComponent ],
-      imports: [ HttpClientTestingModule ]
+      providers: [
+        FormBuilder
+      ]
     })
     .compileComponents();
   });

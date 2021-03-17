@@ -1,9 +1,5 @@
-//Thanks to https://stackoverflow.com/questions/47236963/no-provider-for-httpclient
-// Http testing module
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-
 import { TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BooksService } from './books.service';
 
 describe('BooksService', () => {
@@ -11,7 +7,7 @@ describe('BooksService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ]
+      imports: [HttpClientTestingModule]
     });
     service = TestBed.inject(BooksService);
   });
