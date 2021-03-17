@@ -6,7 +6,7 @@
     "start": "node server.js",
     "start:dev": "ng serve",
     "prebuild": "npm run config",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
