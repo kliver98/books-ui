@@ -48,7 +48,7 @@
       <td [nzChecked]="setOfCheckedId.has(data.id)" [nzDisabled]="data.isSelected" (nzCheckedChange)="onItemChecked(data.id, $event)"></td>
       <td>{{ data.name }}</td>
       <td>{{ data.author }}</td>
-      <td><button data-test="btn-edit-book-{{data.id}}" nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="edit" (click)="onEditBook(data)"></i></button></td>
+      <td><button [attr.data-test]="'btn-edit-book-'+data.id" nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="edit" (click)="onEditBook(data)"></i></button></td>
     </tr>
   </tbody>
 </nz-table>
