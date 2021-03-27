@@ -17,7 +17,7 @@ jobs:
           from_branch: qa-staging
           target_branch: main
           github_token: ${{ secrets.GH_TOKEN }}
-      - uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
+      - uses: akhileshns/heroku-deploy@v3.11.10
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP_NAME}} # Must be unique in Heroku
