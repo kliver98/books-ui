@@ -1,15 +1,22 @@
 name: Deploy
 
 on:
-  pull_request:
-    branches:
-      - main
+  repository_dispatch:
+    types: [TestsPassed]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/checkout@master
+      - name: Merge qa-staging -> main
+        uses: devmasx/merge-branch@v1.3.1
+        with:
+          type: now
+          from_branch: qa-staging
+          target_branch: main
+          github_token: ${{ secrets.GH_TOKEN }}
       - uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
