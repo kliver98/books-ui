@@ -44,11 +44,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of rowSelectionTable.data">
+    <tr *ngFor="let data of rowSelectionTable.data" [attr.data-test]="'tr-book-'+data.id">
       <td [nzChecked]="setOfCheckedId.has(data.id)" [nzDisabled]="data.isSelected" (nzCheckedChange)="onItemChecked(data.id, $event)"></td>
-      <td [attr.data-test]="'txt-name-book-'+data.id">{{ data.name }}</td>
-      <td [attr.data-test]="'txt-author-book-'+data.id">{{ data.author }}</td>
-      <td><button [attr.data-test]="'btn-edit-book-'+data.id" nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="edit" (click)="onEditBook(data)"></i></button></td>
+      <td>{{ data.name }}</td>
+      <td>{{ data.author }}</td>
+      <td><button nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="edit" (click)="onEditBook(data)"></i></button></td>
     </tr>
   </tbody>
 </nz-table>
